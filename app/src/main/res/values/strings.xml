@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">TennisCoaching</string>
+    <string name="login">Login</string>
+    <string name="email">Adresse email</string>
+    <string name="pwd">* * * * * * * *</string>
+    <string name="pwd_oublie">Mot de passe oublié ?</string>
+    <string name="register">Signup ?</string>
+    <string name="instructions">Instructions</string>
+    <string name="about">A propos</string>
+    <string name="messagesucess">Done successfuly</string>
+    <string name="item_Home">Actualités</string>
+    <string name="item_Progress">Avancements</string>
+    <string name="txt_change_pwd">Changer le mot de passe</string>
+    <string name="txt_back">Retour</string>
+    <string name="txt_save">Enregistrer</string>
+    <string name="validate">Validater</string>
+    <string name="usernameandpassword">Login ou mot de passe incorrecte</string>
+    <string name="congratulation">Félécitation</string>
+    <string name="text_fname">Nom</string>
+    <string name="text_retype_password">Re-type mot de passe</string>
+    <string name="txt_next">Suivant</string>
+    <string name="txt_validate">Validater le code</string>
+    <string name="txt_msg">Please enter the validate code</string>
+    <string name="txt_code">Validate Code</string>
+    <string name="item_create_account">Créer un nouveau compte</string>
+    <string name="validation_valid_password">Enter a password contain at least 8 places  </string>
+    <string name="item_contact">Contactez nous</string>
+    <string name="item_MyInfo">Profil</string>
+    <string name="text_password">Mot de passe</string>
+    <string name="text_home_phone">Num. tél.</string>
+    <string name="txt_phone">Num. tél.</string>
+
+
+    <string name="sgnout">Déconnexion</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_account">Créer un nouveau compte</string>
+</resources>
