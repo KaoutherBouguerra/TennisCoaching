@@ -4,12 +4,12 @@
     <string name="email">Adresse email</string>
     <string name="pwd">* * * * * * * *</string>
     <string name="pwd_oublie">Mot de passe oublié ?</string>
-    <string name="register">Signup ?</string>
+
     <string name="instructions">Instructions</string>
     <string name="about">A propos</string>
     <string name="messagesucess">Done successfuly</string>
     <string name="item_Home">Actualités</string>
-    <string name="item_Progress">Avancements</string>
+    <string name="item_Progress">Galerie</string>
     <string name="txt_change_pwd">Changer le mot de passe</string>
     <string name="txt_back">Retour</string>
     <string name="txt_save">Enregistrer</string>
@@ -29,12 +29,28 @@
     <string name="text_password">Mot de passe</string>
     <string name="text_home_phone">Num. tél.</string>
     <string name="txt_phone">Num. tél.</string>
-
+    <plurals name="likes_count">
+        <item quantity="one">%d like</item>
+        <item quantity="other">%d likes</item>
+    </plurals>
 
     <string name="sgnout">Déconnexion</string>
+    <string name="register">Pas de compte? s\'inscrire</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="create_account">Créer un nouveau compte</string>
+    <string name="create_account">Fiche de rensignements</string>
+    <string name="description">Nous avons crée une école d\'été pour fournir aux amateurs de tennis de la Ville de Tunis un lieu pour pratiquer leur sport favori, à l’intérieur comme à l’extérieur. Dans sa constante évolution, l\'école a su diversifier son offre avec les années en proposant une variété de cours pour jeunes et adultes</string>
+    <string name="description2">Vous recherchez un accompagnement des plus personnalisés? Profitez d’un entraîneur spécialisé, dédié entièrement à vous et à votre jeu en optant pour nos cours privés. Évoluez à votre rythme, quel qu’il soit</string>
+    <string name="mission">Participer activement au rayonnement du tennis en fournissant un lieu de pratique sécuritaire et en initiant les gens de tout genre et de tout âge au sport. Enseigner les valeurs et principes essentiels à la pratique d’un sport tels que le respect, la discipline et le dépassement de soi. Promouvoir un mode de vie sain, actif et stimulant.</string>
+    <string name="vision">Être l’école de tennis la plus dynamique au Tunis, qui se démarque par son approche humaine, souple et audacieuse. Être reconnue comme un endroit de camaraderie, de compétition, de santé et d’écoute pour tous.</string>
+    <string name="valeurs">Il existe à la base de l’École de tennis JMG un ensemble de valeurs fondamentales qui sous-tendent sa philosophie d’entreprise :
+Bien-être, dans toutes les sphères de notre entreprise / respect des coéquipiers, des adversaires et du sport / discipline / persévérance et dépassement de soi / soutien, accompagnement et travail d’équipe.
+Tous nos employés partagent ces valeurs fondamentales et s’efforcent de les véhiculer quotidiennement auprès de notre clientèle.</string>
+
+    <string name="description4">Une école au centre d’entraînement Elmanzah pour les joueurs de haut niveau et espoirs, notre école développe, sous la direction de Rabii Salhi une politique sportive et une formation dynamique qui met particulièrement l’accent sur la qualité de l’enseignement.</string>
+    <string name="description44">L’école de tennis est ouverte les lundi, mercredi et vendredi aux jeunes de 4 à 15 ans.
+L’enseignement est assuré par des professeurs expérimentés et diplômés. La répartition des enfants dans les groupes tient compte du niveau tennistique et de l\'âge de l\'enfant.</string>
+    <string name="title_activity_details_main">DetailsMainActivity</string>
 </resources>

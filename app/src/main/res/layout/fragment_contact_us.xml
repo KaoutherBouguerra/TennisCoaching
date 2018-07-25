@@ -1,13 +1,169 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="22dp"
+        android:id="@+id/relative"
+        >
 
-</FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/view"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/darker_gray"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@mipmap/call"
+                android:background="@drawable/green_circle_shape"
+                android:layout_marginRight="32dp"
+                android:id="@+id/btn_call"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:src="@drawable/coach"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:background="@drawable/yellow_circle_shape"
+                android:src="@mipmap/msg"
+                android:id="@+id/btn_message"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/relative"
+        android:id="@+id/linear"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:text="Rabii Salhi"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="16dp"
+            android:text="Tennis Coach"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="10dp"
+            android:text="Responsable de l'école de tennis et du centre d'entrainement"/>
+    </LinearLayout>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="22dp"
+        app:cardBackgroundColor="@android:color/white"
+        android:layout_marginRight="22dp"
+        android:layout_height="wrap_content"
+
+
+        android:layout_below="@+id/linear"
+        card_view:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:text="Notre écolde"
+                android:layout_width="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="6dp"
+                android:textSize="16dp"
+                android:id="@+id/a_propos"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="@string/description4"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:inputType="textMultiLine"
+                android:layout_marginTop="12dp"
+
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/description44"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:inputType="textMultiLine"
+                android:layout_marginBottom="12dp"
+
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="22dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="22dp"
+            android:orientation="horizontal">
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_facebook"
+                android:layout_marginRight="16dp"
+                android:id="@+id/img_facebook"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/web"
+                android:layout_marginRight="16dp"
+                android:id="@+id/img_web"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_google_plus"
+                android:id="@+id/img_gplus"/>
+        </LinearLayout>
+
+
+
+</RelativeLayout>

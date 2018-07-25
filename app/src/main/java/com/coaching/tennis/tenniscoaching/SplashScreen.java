@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.coaching.tennis.tenniscoaching.application.BaseApplication;
+
 public class SplashScreen extends AppCompatActivity {
 
     @Override
@@ -18,10 +20,15 @@ public class SplashScreen extends AppCompatActivity {
                     sleep(3000);
                 }catch(InterruptedException e){
                     e.printStackTrace();
-                } finally{
+                } finally {
 
-                    Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
-                    startActivity(intent);
+
+                  //  if (!BaseApplication.session.isLoggedIn()){
+                        Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                  //  }else BaseApplication.session.checkLogin();
+
                 }
             }
         };

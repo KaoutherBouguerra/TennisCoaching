@@ -3,6 +3,7 @@ package com.coaching.tennis.tenniscoaching.Common;
 
 import com.coaching.tennis.tenniscoaching.Remote.IconBetterIdeaClient;
 import com.coaching.tennis.tenniscoaching.Remote.RetrofitClient;
+import com.coaching.tennis.tenniscoaching.interfaces.FeedDataService;
 import com.coaching.tennis.tenniscoaching.interfaces.IconBetterIdeaService;
 import com.coaching.tennis.tenniscoaching.interfaces.NewsService;
 import com.coaching.tennis.tenniscoaching.interfaces.UserDataService;
@@ -24,6 +25,10 @@ public class Common {
     {
         return RetrofitClient.getClient(BASE_URL).create(UserDataService.class);
     }
+    public static FeedDataService getActualite()
+    {
+        return RetrofitClient.getClient(BASE_URL).create(FeedDataService.class);
+    }
 
     public static IconBetterIdeaService getIconService()
     {
@@ -38,7 +43,8 @@ public class Common {
                 .append("&apiKey=")
                 .append(apiKEY)
                 .toString();
-    } public static String getLoginURL(String source, String username, String password)
+    }
+    public static String getLoginURL(String source, String username, String password)
     {
         StringBuilder apiUrl = new StringBuilder(BASE_URL);
         return apiUrl.append(source)
@@ -46,6 +52,13 @@ public class Common {
                 .append(username)
                 .append("&password=")
                 .append(password)
+                .toString();
+    }
+    public static String getActualiteURL(String source)
+    {
+        StringBuilder apiUrl = new StringBuilder(BASE_URL);
+        return apiUrl.append(source)
+
                 .toString();
     }
 

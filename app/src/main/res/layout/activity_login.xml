@@ -8,12 +8,9 @@
 
     android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
 
-        android:scrollbars="none">
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,7 +24,7 @@
                 android:layout_width="84dp"
                 android:layout_height="84dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="48dp"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:src="@drawable/green"
  />
@@ -39,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:drawableLeft="@mipmap/avatar"
+                     android:drawableLeft="@mipmap/avatar"
                     android:drawablePadding="16dp"
                     android:textColorHint="@android:color/darker_gray"
                     android:ems="10"
@@ -86,10 +83,12 @@
                 android:orientation="horizontal">
                 <Button
                     android:id="@+id/login_btn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_weight="0.5"
 
                     android:layout_marginTop="15dp"
@@ -98,19 +97,24 @@
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/register_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:layout_marginTop="15dp"
-                    android:textStyle="bold"
-                    android:background="@null"
-                    android:text="@string/register"
-                    android:textColor="@android:color/darker_gray"
-                    />
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_above="@+id/email_sign_up_button"></View>
+    <TextView
+        android:id="@+id/email_sign_up_button"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:padding="14dp"
+        android:gravity="center"
+        android:text="@string/register"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+
+        android:textStyle="bold" />
 </RelativeLayout>

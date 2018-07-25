@@ -8,12 +8,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.coaching.tennis.tenniscoaching.Common.Common;
 import com.coaching.tennis.tenniscoaching.Model.Article;
 import com.coaching.tennis.tenniscoaching.Model.News;
 import com.coaching.tennis.tenniscoaching.Model.User;
 import com.coaching.tennis.tenniscoaching.adapters.ListNewsAdapter;
+import com.coaching.tennis.tenniscoaching.application.BaseApplication;
 import com.coaching.tennis.tenniscoaching.interfaces.NewsService;
 import com.coaching.tennis.tenniscoaching.interfaces.UserDataService;
 import com.squareup.picasso.Picasso;
@@ -24,6 +26,8 @@ import dmax.dialog.SpotsDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.coaching.tennis.tenniscoaching.Constants.WEB_SITE;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -50,12 +54,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button _register_btn = findViewById(R.id.register_btn);
-        _register_btn.setOnClickListener(new View.OnClickListener() {
+        TextView email_sign_up_button = findViewById(R.id.email_sign_up_button);
+        email_sign_up_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+               // startActivity(intent);
+
+                Intent detail = new Intent(LoginActivity.this,DetailArticle.class);
+                detail.putExtra("webURL",WEB_SITE);
+                startActivity(detail);
             }
         });
     }
@@ -77,6 +85,13 @@ public class LoginActivity extends AppCompatActivity {
                         public void onResponse(Call<User> call, Response<User> response) {
                             dialog.dismiss();
                             //Get first article
+                            User user = response.body();
+                            BaseApplication.session.createLoginSession(
+                                    user.getId_client(),user.getLogin(),user.getPassword(),user.getNom(),
+                                    user.getPrenom(),user.getAdresse(),user.getDate_naissance(),
+                                    user.getActivite_sportif(),user.getUrl_image(), user.getNom_pere(),
+                                    user.getPrenom_pere(),user.getEmail_pere(),user.getTravail_pere(),user.getTel_pere(),
+                                    user.getNom_mere(),user.getPrenom_mere(),user.getEmail_mere(),user.getTravail_mere(),user.getTel_mere());
                             Log.e("Login "," user data : "+response.body().toString());
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);

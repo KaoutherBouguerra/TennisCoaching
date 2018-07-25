@@ -12,7 +12,7 @@
 
 
 
-        <item  android:id="@+id/item_Myorders"
+        <item  android:id="@+id/item_galery"
             android:icon="@mipmap/order"
             android:title="@string/item_Progress"/>
 

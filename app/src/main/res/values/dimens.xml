@@ -9,4 +9,6 @@
     <dimen name="progress_circle_radius">34dp</dimen>
     <dimen name="loading_view_progress_size">30dp</dimen>
     <dimen name="activity_drawable_padding">10dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="default_elevation">8dp</dimen>
 </resources>
