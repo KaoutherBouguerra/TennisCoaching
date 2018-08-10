@@ -1,13 +1,10 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:layout_height="match_parent">
-<RelativeLayout
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.coaching.tennis.tenniscoaching.fragments.AboutUsFragment"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -45,7 +42,7 @@ tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
     android:layout_below="@+id/relative"
     android:id="@+id/linear"
     android:gravity="center">
-    <TextView
+    <com.coaching.tennis.tenniscoaching.custom.CustomTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
@@ -85,14 +82,14 @@ tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
-                <TextView
+                <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                     android:id="@+id/TextPhone"
                     android:text="Num. Tel : "
                      android:textColor="#000000"
                     android:textSize="14dp"
                     android:gravity="left"/>
 
-                <TextView
+                <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                     android:id="@+id/txt_phone"
                     android:text="Indéfinie"
                     android:layout_weight="1"
@@ -104,14 +101,14 @@ tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
-                <TextView
+                <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                     android:id="@+id/TextAdresse"
                     android:text="Adresse : "
 
                     android:textColor="#000000"
                     android:gravity="left"/>
 
-                <TextView
+                <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                     android:id="@+id/txt_adresse"
                     android:text="Indéfinie"
                     android:layout_weight="1"
@@ -123,14 +120,14 @@ tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
-                <TextView
+                <com.coaching.tennis.tenniscoaching.custom.CustomTextView
 
                     android:text="Nom pére : "
 
                     android:textColor="#000000"
                     android:gravity="left"/>
 
-                <TextView
+                <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                     android:id="@+id/txt_nom_pere"
                     android:text="Indéfinie"
                     android:layout_weight="1"
@@ -142,14 +139,14 @@ tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
-                <TextView
+                <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                     android:id="@+id/TextView0"
                     android:text="Nom mére : "
 
                     android:textColor="#000000"
                     android:gravity="left"/>
 
-                <TextView
+                <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                     android:id="@+id/txt_nom_mere"
                     android:text="Indéfinie"
                     android:layout_weight="1"
@@ -165,7 +162,7 @@ tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
 </android.support.v7.widget.CardView>
 
 
-    <LinearLayout
+    <!--LinearLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:id="@+id/video_linear"
@@ -184,7 +181,7 @@ tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
                 android:id="@+id/video_avant"
                 />
 
-            <TextView
+            <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
@@ -217,15 +214,15 @@ tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
         </FrameLayout>
 
 
-    </LinearLayout>
+    </LinearLayout-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="22dp"
         android:layout_marginLeft="16dp"
-        android:layout_below="@+id/video_linear">
-        <TextView
+        android:layout_alignParentBottom="true">
+        <com.coaching.tennis.tenniscoaching.custom.CustomTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorAccent"
@@ -233,7 +230,7 @@ tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
             android:textStyle="bold"
 
             android:text="Remarques de coach"/>
-        <TextView
+        <com.coaching.tennis.tenniscoaching.custom.CustomTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/darker_gray"
@@ -248,4 +245,3 @@ tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
 
 
 </RelativeLayout>
-</ScrollView>

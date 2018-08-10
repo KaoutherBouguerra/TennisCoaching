@@ -4,199 +4,146 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:background="@color/colorPrimary"
+    android:background="@android:color/white"
     android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:id="@+id/relative"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:id="@+id/btn_back"
+            android:drawableLeft="?attr/homeAsUpIndicator"/>
+
+        <com.coaching.tennis.tenniscoaching.custom.CustomTextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+
+            android:text="Inscription"
+            android:textColor="@color/textPrimaryColor"
+            android:textSize="16dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/view"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/relative"
+        />
+    <com.coaching.tennis.tenniscoaching.custom.CustomButton
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/pink_rectangle"
+        android:text="Valider"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+         android:layout_marginTop="22dp"
 
+        android:layout_below="@+id/view"
         android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:id="@+id/linear"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:layout_marginTop="20dp"
-                android:text="@string/create_account"
-                android:textColor="@android:color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-            <!--TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:text="التسجيل متاح لمقدمى الخدمة"
-                android:textColor="@android:color/white"
-                android:textSize="18dp"
-                /-->
-
-            <android.support.design.widget.TextInputLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
-
-                android:layout_marginTop="10dp"
 
 
-                android:background="@drawable/rectangle"
 
-                android:textColorHint="@color/grey">
-
-                <EditText
-                    android:id="@+id/name_edit"
+                <com.coaching.tennis.tenniscoaching.custom.CustomEditText
+                    android:id="@+id/edt_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
+                    android:paddingBottom="16dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
                     android:ems="10"
-                    android:gravity="top|right"
-                    android:hint="اسم المستخدم"
+                    android:hint="Nom et prénom"
                     android:inputType="text"
-                    android:padding="5dp"
-                    android:textColorHint="@color/grey" />
-            </android.support.design.widget.TextInputLayout>
 
-            <Spinner
-                android:id="@+id/spinne"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="left"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/rectangle"
-                android:gravity="left" />
-
-            <android.support.design.widget.TextInputLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
-
-                android:layout_marginTop="10dp"
+                    android:textColorHint="@android:color/darker_gray" />
 
 
-                android:background="@drawable/rectangle"
-
-                android:textColorHint="@color/grey">
-
-                <EditText
-                    android:id="@+id/email_edit"
+                <com.coaching.tennis.tenniscoaching.custom.CustomEditText
+                    android:id="@+id/edt_mail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
+
                     android:ems="10"
-                    android:gravity="top|right"
-                    android:hint="البريد الالكترونى"
+                    android:layout_marginBottom="6dp"
+                    android:paddingBottom="16dp"
+                    android:layout_marginTop="6dp"
+                    android:hint="Adresse email"
                     android:inputType="textEmailAddress"
-                    android:padding="5dp"
-                    android:textColorHint="@color/grey" />
-            </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+                    android:textColorHint="@android:color/darker_gray" />
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
-
-                android:layout_marginTop="10dp"
-
-
-                android:background="@drawable/rectangle"
-
-                android:textColorHint="@color/grey">
-
-                <EditText
-                    android:id="@+id/phone_edit"
+                <com.coaching.tennis.tenniscoaching.custom.CustomEditText
+                    android:id="@+id/edt_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
+                    android:paddingBottom="16dp"
                     android:ems="10"
-                    android:gravity="top|right"
-                    android:hint="الجوال"
+                    android:hint="N° Tel."
                     android:inputType="number"
-                    android:padding="5dp"
-                    android:textColorHint="@color/grey" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
+                    android:layout_marginBottom="6dp"
+
+                    android:layout_marginTop="6dp"
+                    android:textColorHint="@android:color/darker_gray" />
 
 
-                android:background="@drawable/rectangle"
 
-                android:textColorHint="@color/grey">
-
-                <EditText
-                    android:id="@+id/password_edit"
+                <com.coaching.tennis.tenniscoaching.custom.CustomEditText
+                    android:id="@+id/edt_pwd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
+                    android:paddingBottom="16dp"
                     android:ems="10"
-                    android:gravity="top|right"
-                    android:hint="كلمة المرور"
+                    android:hint="Mot de passe"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
                     android:inputType="textPassword"
-                    android:padding="5dp"
-                    android:textColorHint="@color/grey" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
+                    android:textColorHint="@android:color/darker_gray" />
 
 
-                android:background="@drawable/rectangle"
-
-                android:textColorHint="@color/grey">
-
-                <EditText
-                    android:id="@+id/password_confirmation_edit"
+                <com.coaching.tennis.tenniscoaching.custom.CustomEditText
+                    android:id="@+id/edt_confirm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
+                    android:paddingBottom="16dp"
                     android:ems="10"
-                    android:gravity="top|right"
-                    android:hint="تأكيد كلمة المرور "
+
+                    android:layout_marginTop="6dp"
+                    android:hint="Confirmer mot de passe"
                     android:inputType="textPassword"
-                    android:padding="5dp"
-                    android:textColorHint="@color/grey" />
-            </android.support.design.widget.TextInputLayout>
 
-            <Button
-                android:id="@+id/register_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="15dp"
-
-                android:layout_marginTop="15dp"
-                android:background="@drawable/pink_rectangle"
-                android:text="Valider"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                    android:textColorHint="@android:color/darker_gray" />
 
 
         </LinearLayout>

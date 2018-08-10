@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0A466B</color>
+    <color name="colorPrimary">#7E972D</color>
     <color name="grey">#EAEAEA</color>
     <color name="colorSecondary">#A91C46</color>
     <color name="textPrimaryColor">#454545</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#0A466B</color>
+    <color name="colorPrimaryDark">#607322</color>
+    <color name="colorAccent">#E7E04A</color>
     <color name="colorPink">#D36787</color>
     <color name="colorGreen">#58B89D</color>
     <color name="float_transparent">#00000000</color>
@@ -17,4 +17,10 @@
     <color name="btn_context_menu_normal">#ffffff</color>
     <color name="btn_context_menu_pressed">#40000000</color>
     <color name="btn_context_menu_text_red">#ffff0000</color>
+    <color name="bas_color">#7E972D</color>
+    <color name="ball_color">#E7E04A</color>
+
+    <color name="item_default_color">#EEEEEE</color>
+    <color name="item_pressed_color">#CCCCCC</color>
+    <color name="item_activated_color">#77CEEE</color>
 </resources>

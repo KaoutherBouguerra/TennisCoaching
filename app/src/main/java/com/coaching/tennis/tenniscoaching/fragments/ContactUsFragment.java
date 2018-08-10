@@ -1,26 +1,41 @@
 package com.coaching.tennis.tenniscoaching.fragments;
 
 
-import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.coaching.tennis.tenniscoaching.DetailArticle;
+import com.coaching.tennis.tenniscoaching.Common.Common;
+import com.coaching.tennis.tenniscoaching.LoginActivity;
+import com.coaching.tennis.tenniscoaching.MainActivity;
+import com.coaching.tennis.tenniscoaching.Model.User;
 import com.coaching.tennis.tenniscoaching.R;
+import com.coaching.tennis.tenniscoaching.application.BaseApplication;
+import com.coaching.tennis.tenniscoaching.interfaces.SendFeedBackService;
+import com.coaching.tennis.tenniscoaching.interfaces.UserDataService;
 
-import static com.coaching.tennis.tenniscoaching.Constants.FACEBOOK_PAGE;
-import static com.coaching.tennis.tenniscoaching.Constants.WEB_SITE;
-import static com.coaching.tennis.tenniscoaching.Constants.phone;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
+import dmax.dialog.SpotsDialog;
+import eu.inmite.android.lib.validations.form.FormValidator;
+import eu.inmite.android.lib.validations.form.annotations.NotEmpty;
+import eu.inmite.android.lib.validations.form.callback.SimpleErrorPopupCallback;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,103 +43,145 @@ import static com.coaching.tennis.tenniscoaching.Constants.phone;
 public class ContactUsFragment extends Fragment {
 
 
-   View v;
-   ImageButton btnCall, btnMsg;
-   ImageView imgFacebook;
-   ImageView imgWeb;
-   ImageView imgGmail;
-    final int REQUEST_PERMISSION = 1000;
+    View v;
+    @NotEmpty(messageId = R.string.nonEmpty, order = 1)
+    protected EditText fullname;
+    @NotEmpty(messageId = R.string.nonEmpty, order = 2)
+    protected EditText email;
+    @NotEmpty(messageId = R.string.nonEmpty, order = 3)
+    protected EditText mobile;
+    @NotEmpty(messageId = R.string.nonEmpty, order = 4)
+    protected EditText feedback;
+    Button btnsend;
+    ImageView fcb,twitter,insta  ;
+    String FullName;
+    String Email,   TWITTER,FACEBOOK,Snapchat,Instagram ;
+    String Mobile;
+    String FeedBak;
 
+    SendFeedBackService mService;
+    AlertDialog dialog;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v =  inflater.inflate(R.layout.fragment_contact_us, container, false);
+        v = inflater.inflate(R.layout.fragment_about_us, container, false);
+
+        mService = Common.sendFeedBackService();
+        dialog = new SpotsDialog(getActivity());
+        inializeField();
 
 
-        initFields();
-
-        btnCall.setOnClickListener(new View.OnClickListener() {
+        /*
+        * */
+        btnsend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PERMISSION);
 
-                    return;
-                } else {
+                validate(view);
+            }
+        });
 
-                    Intent intent = new Intent();
-                    Uri uri = Uri.parse("tel:" + phone.trim());
-                    intent.setAction(Intent.ACTION_CALL);
-                    intent.setData(uri);
-                    startActivity(intent);
+
+        fcb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(FACEBOOK));
+                startActivity(i);
+            }
+        });
+
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(TWITTER));
+                startActivity(i);
+            }
+        });
+
+        insta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(Instagram));
+                    startActivity(i);
+                }catch (Exception e){
+                    Log.e("TabFragment1","Exception insta "+e.getMessage());
                 }
 
-
-            }
-        });
-
-        btnMsg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + phone));
-                intent.putExtra("sms_body", "");
-                startActivity(intent);
-            }
-        });
-
-        imgFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent detail = new Intent(getActivity().getBaseContext(),DetailArticle.class);
-                detail.putExtra("webURL",FACEBOOK_PAGE);
-                startActivity(detail);
-            }
-        });
-        imgWeb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent detail = new Intent(getActivity().getBaseContext(),DetailArticle.class);
-                detail.putExtra("webURL",WEB_SITE);
-                startActivity(detail);
             }
         });
 
         return v;
     }
 
-    private void initFields(){
-        btnCall = v.findViewById(R.id.btn_call);
-        btnMsg = v.findViewById(R.id.btn_message);
-        imgFacebook = v.findViewById(R.id.img_facebook);
-        imgWeb = v.findViewById(R.id.img_web);
-        imgGmail = v.findViewById(R.id.img_gplus);
-
+    private void inializeField() {
+        fullname =(EditText)v.findViewById(R.id.et_FullName);
+        email=(EditText)v.findViewById(R.id.et_Email);
+        mobile =(EditText)v.findViewById(R.id.et_PhoneNumber);
+        feedback =(EditText)v.findViewById(R.id.et_FeedBack);
+        btnsend =(Button)v.findViewById(R.id.btn_SendComplain);
+        fcb =(ImageView)v.findViewById(R.id.fcb);
+        twitter =(ImageView)v.findViewById(R.id.twitter);
+        insta =(ImageView)v.findViewById(R.id.insta);
     }
 
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_PERMISSION:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-
-                            Intent intent = new Intent();
-                            Uri uri = Uri.parse("tel:" + phone.trim());
-                            intent.setAction(Intent.ACTION_CALL);
-                            intent.setData(uri);
-                            startActivity(intent);
-
-                }
+    public void validate(View view) {
+        FullName= String.valueOf(fullname.getText());
+        Email = String.valueOf(email.getText());
+        Mobile= String.valueOf(mobile.getText());
+        FeedBak= String.valueOf(feedback.getText());
+        long start = SystemClock.elapsedRealtime();
+        final boolean isValid = FormValidator.validate(this, new SimpleErrorPopupCallback(getContext(), true));
+        long time = SystemClock.elapsedRealtime() - start;
+        Log.e(getClass().getName(), "validation finished in [ms] " + time);
+        try {
+            String queryFeedBak = URLEncoder.encode(FeedBak, "utf-8");
+            String queryFullName = URLEncoder.encode(FullName, "utf-8");
+            if (isValid) {
+                sendFeedBack(queryFullName, Email, Mobile, queryFeedBak) ;
+                // Toast.makeText(getContext(),"Success", Toast.LENGTH_LONG).show();
+            }
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
+
     }
+
+
+
+    private void sendFeedBack( String username, String email, String mobile, String feedBak) {
+
+        dialog.show();
+        String url = Common.sendFeedBackURL("contact.php?",username, email, mobile, feedBak);
+        Log.e("Contact Fragment "," sendFeedBack url "+url);
+        mService.sendFeedBack(url)
+                .enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        dialog.dismiss();
+                        //Get first article
+                        String msg = response.body();
+
+                        Toast.makeText(getActivity(), msg, Toast.LENGTH_LONG).show();
+                        Log.e("sendFeedBack "," msg data : "+msg);
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        Log.e("sendFeedBack "," erreur d'envoi: "+call.toString()+" errue est = "+t.getMessage());
+                        t.getCause();
+                        dialog.dismiss();
+
+                    }
+                });
+
+    }
+
 
 }

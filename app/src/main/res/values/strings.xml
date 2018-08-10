@@ -2,7 +2,7 @@
     <string name="app_name">TennisCoaching</string>
     <string name="login">Login</string>
     <string name="email">Adresse email</string>
-    <string name="pwd">* * * * * * * *</string>
+    <string name="pwd">. . . . . . . .</string>
     <string name="pwd_oublie">Mot de passe oublié ?</string>
 
     <string name="instructions">Instructions</string>
@@ -13,6 +13,7 @@
     <string name="txt_change_pwd">Changer le mot de passe</string>
     <string name="txt_back">Retour</string>
     <string name="txt_save">Enregistrer</string>
+    <string name="txt_envoyer">Envoyer</string>
     <string name="validate">Validater</string>
     <string name="usernameandpassword">Login ou mot de passe incorrecte</string>
     <string name="congratulation">Félécitation</string>
@@ -53,4 +54,10 @@ Tous nos employés partagent ces valeurs fondamentales et s’efforcent de les v
     <string name="description44">L’école de tennis est ouverte les lundi, mercredi et vendredi aux jeunes de 4 à 15 ans.
 L’enseignement est assuré par des professeurs expérimentés et diplômés. La répartition des enfants dans les groupes tient compte du niveau tennistique et de l\'âge de l\'enfant.</string>
     <string name="title_activity_details_main">DetailsMainActivity</string>
+    <string name="txt_follow">Suivez nous</string>
+    <string name="nom">Nom et prénom</string>
+    <string name="nonEmpty">Veuillez remplir ce champs</string>
+    <string name="error_field_required">Veuillez remplir ce champs</string>
+    <string name="error_field_not_match">Les champs ne correspondent pas</string>
+    <string name="error_not_exist">Cette fonctionnalité sera disponible très bientôt</string>
 </resources>

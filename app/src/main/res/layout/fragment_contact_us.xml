@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.coaching.tennis.tenniscoaching.fragments.ContactUsFragment">
+    tools:context="com.coaching.tennis.tenniscoaching.fragments.AboutUsFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -61,21 +61,21 @@
         android:layout_below="@+id/relative"
         android:id="@+id/linear"
         android:gravity="center">
-        <TextView
+        <com.coaching.tennis.tenniscoaching.custom.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             android:textSize="20dp"
             android:text="Rabii Salhi"/>
-        <TextView
+        <com.coaching.tennis.tenniscoaching.custom.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textColor="@android:color/darker_gray"
             android:textSize="16dp"
             android:text="Tennis Coach"/>
-        <TextView
+        <com.coaching.tennis.tenniscoaching.custom.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -88,7 +88,7 @@
         android:id="@+id/card_view"
         android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="14dp"
         android:layout_marginLeft="22dp"
         app:cardBackgroundColor="@android:color/white"
         android:layout_marginRight="22dp"
@@ -102,25 +102,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:text="Notre écolde"
+            <com.coaching.tennis.tenniscoaching.custom.CustomTextView
+                android:text="Notre école"
                 android:layout_width="wrap_content"
                 android:textColor="@android:color/black"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="4dp"
                 android:textSize="16dp"
                 android:id="@+id/a_propos"
                 android:layout_height="wrap_content" />
 
-            <TextView
+            <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                 android:text="@string/description4"
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:inputType="textMultiLine"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
 
                 android:layout_height="wrap_content" />
-            <TextView
+            <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                 android:text="@string/description44"
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="16dp"

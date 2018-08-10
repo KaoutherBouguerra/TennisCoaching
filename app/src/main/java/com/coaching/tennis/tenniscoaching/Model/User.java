@@ -25,9 +25,17 @@ public class User {
     private String email_mere;
     private String travail_mere;
     private String tel_mere;
-    private String url_image;
+    private String profile_img;
 
-    public User(String id_client, String login, String password, String nom, String prenom, String adresse, String genre, String date_naissance, String activite_sportif, String nom_pere, String prenom_pere, String email_pere, String travail_pere, String tel_pere, String nom_mere, String prenom_mere, String email_mere, String travail_mere, String tel_mere, String url_image) {
+    public String getProfile_img() {
+        return profile_img;
+    }
+
+    public void setProfile_img(String profile_img) {
+        this.profile_img = profile_img;
+    }
+
+    public User(String id_client, String login, String password, String nom, String prenom, String adresse, String genre, String date_naissance, String activite_sportif, String nom_pere, String prenom_pere, String email_pere, String travail_pere, String tel_pere, String nom_mere, String prenom_mere, String email_mere, String travail_mere, String tel_mere, String profile_img) {
         this.id_client = id_client;
         this.login = login;
         this.password = password;
@@ -47,7 +55,7 @@ public class User {
         this.email_mere = email_mere;
         this.travail_mere = travail_mere;
         this.tel_mere = tel_mere;
-        this.url_image = url_image;
+        this.profile_img = profile_img;
     }
 
 
@@ -203,13 +211,7 @@ public class User {
         this.tel_mere = tel_mere;
     }
 
-    public String getUrl_image() {
-        return url_image;
-    }
 
-    public void setUrl_image(String url_image) {
-        this.url_image = url_image;
-    }
 
     @Override
     public String toString() {
@@ -233,7 +235,7 @@ public class User {
                 ", email_mere='" + email_mere + '\'' +
                 ", travail_mere='" + travail_mere + '\'' +
                 ", tel_mere='" + tel_mere + '\'' +
-                ", url_image='" + url_image + '\'' +
+                ", profile_img='" + profile_img + '\'' +
                 '}';
     }
 }

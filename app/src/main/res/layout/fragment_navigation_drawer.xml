@@ -42,7 +42,7 @@
 
                 android:orientation="horizontal">
 
-                <TextView
+                <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                     android:id="@+id/txtName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -59,14 +59,7 @@
                     android:src="@mipmap/profile" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/btn_inscri"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/full_roundrectangle_blue"
-                android:text="Log In"
-                android:visibility="gone"
-                android:textColor="@android:color/white" />
+
 
         </LinearLayout>
 

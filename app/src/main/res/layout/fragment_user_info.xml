@@ -28,7 +28,7 @@
                 app:civ_border_color="@android:color/white"
                 android:layout_gravity="center" />
 
-            <EditText
+            <com.coaching.tennis.tenniscoaching.custom.CustomEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -48,7 +48,7 @@
                 android:layout_marginBottom="10dp" />
 
 
-            <EditText
+            <com.coaching.tennis.tenniscoaching.custom.CustomEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
@@ -67,7 +67,7 @@
                 android:textSize="@dimen/activity_drawable_padding"
                 android:layout_marginBottom="10dp" />
 
-            <EditText
+            <com.coaching.tennis.tenniscoaching.custom.CustomEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
@@ -86,7 +86,7 @@
                 android:textSize="@dimen/activity_size"
                 android:layout_marginBottom="10dp" />
 
-            <TextView
+            <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                 android:text="@string/txt_change_pwd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                 android:layout_marginTop="16dp"
                 android:id="@+id/textView2" />
 
-            <EditText
+            <com.coaching.tennis.tenniscoaching.custom.CustomEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -114,7 +114,7 @@
                 android:hint="@string/text_password"
                 android:layout_marginBottom="10dp" />
 
-            <EditText
+            <com.coaching.tennis.tenniscoaching.custom.CustomEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/activity_size"
@@ -141,7 +141,7 @@
                 android:orientation="horizontal">
 
 
-                <Button
+                <com.coaching.tennis.tenniscoaching.custom.CustomButton
                     android:id="@+id/btnregp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -158,7 +158,7 @@
                     android:textSize="@dimen/activity_horizontal_margin"
                     android:textStyle="bold" />
 
-                <Button
+                <com.coaching.tennis.tenniscoaching.custom.CustomButton
                     android:id="@+id/btnBack"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

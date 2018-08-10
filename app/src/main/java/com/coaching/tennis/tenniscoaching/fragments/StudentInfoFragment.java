@@ -61,8 +61,8 @@ public class StudentInfoFragment extends Fragment {
         txtAdresse = v.findViewById(R.id.txt_adresse);
         txtNameP = v.findViewById(R.id.txt_nom_pere);
         txtNameM = v.findViewById(R.id.txt_nom_mere);
-        videoApres = v.findViewById(R.id.video_apres);
-        videoAvant = v.findViewById(R.id.video_avant);
+       // videoApres = v.findViewById(R.id.video_apres);
+        //videoAvant = v.findViewById(R.id.video_avant);
         imgProfile = v.findViewById(R.id.img_profile_image);
         txtPhone = v.findViewById(R.id.txt_phone);
 

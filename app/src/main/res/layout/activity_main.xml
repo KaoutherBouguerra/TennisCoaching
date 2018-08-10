@@ -27,7 +27,19 @@
                 android:layout_height="match_parent"
                 android:layout_below="@+id/appBarLayout"
                 android:id="@+id/frame">
-            <android.support.v7.widget.RecyclerView
+
+                <com.coaching.tennis.tenniscoaching.custom.CustomTextView
+                    android:id="@+id/txt_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginRight="33dp"
+                    android:layout_marginLeft="33dp"
+                    android:gravity="center"
+                    android:text="Aucune nouvelle pour le moment ! Restez à l'écoute :)" />
+
+                <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvFeed"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -59,10 +71,33 @@
         android:fitsSystemWindows="true"
         app:menu="@menu/drawer_menu"
 
-        app:itemIconTint="@color/colorAccent"
+        app:itemIconTint="@color/bas_color"
         android:background="@android:color/white"
         app:headerLayout="@layout/fragment_navigation_drawer">
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+            <com.coaching.tennis.tenniscoaching.custom.CustomTextView
+                android:id="@+id/login_or_logout_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:padding="14dp"
+                android:gravity="center"
+                android:text="@string/sgnout"
+                android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content"
+
+                android:textStyle="bold" />
+        </LinearLayout>
     </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>

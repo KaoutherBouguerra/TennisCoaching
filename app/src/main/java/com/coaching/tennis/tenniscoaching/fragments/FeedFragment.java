@@ -64,8 +64,8 @@ public class FeedFragment extends Fragment implements FeedAdapter.OnFeedItemClic
     private void initFields(){
      rvFeed = v.findViewById(R.id.rvFeed);
     }
- private void setupFeed() {
-  LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity()) {
+    private void setupFeed() {
+     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity()) {
    @Override
    protected int getExtraLayoutSpace(RecyclerView.State state) {
     return 300;

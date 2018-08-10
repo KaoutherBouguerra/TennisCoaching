@@ -4,16 +4,18 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="?attr/colorPrimary"
+    android:background="@color/bas_color"
     app:elevation="@dimen/default_elevation"
     app:layout_scrollFlags="scroll|enterAlways"
     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    <ImageView
+    <com.coaching.tennis.tenniscoaching.custom.CustomTextViewBold
         android:id="@+id/ivLogo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginRight="16dp"
         android:scaleType="center"
-        android:src="@mipmap/ic_launcher" />
+        android:textColor="@android:color/white"
+        android:text=""/>
 </android.support.v7.widget.Toolbar>

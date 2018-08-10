@@ -30,7 +30,7 @@
            android:layout_width="0dp"
            android:layout_height="wrap_content">
 
-           <TextView
+           <com.coaching.tennis.tenniscoaching.custom.CustomTextView
            android:id="@+id/article_title"
            android:textSize="18sp"
 

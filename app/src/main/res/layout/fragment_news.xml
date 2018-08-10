@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
+                <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                     android:id="@+id/top_author"
                     android:layout_gravity="top|left"
                     android:fontFamily="sans-serif-light"
@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true">
 
-                    <TextView
+                    <com.coaching.tennis.tenniscoaching.custom.CustomTextView
                         android:id="@+id/top_title"
                         android:layout_gravity="top|left"
                         android:fontFamily="sans-serif-light"
